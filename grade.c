@@ -6,13 +6,18 @@ void main()
     char grade;
 
     printf(" enter your score :");
-    scanf("%f",&score);
+    scanf("%d",&score);
 
-   grade= (score>=90) ?  'A' : (score>=80) ?  'B' : 
-    (score>=70) ?  'C' ? (score>=60) :  'D' :
-    (score>=50) ?  'E' : 'F';
+    (score>=90 && score<=100) ? grade= 'A' :
+    (score>=80 && score<90) ? grade= 'B' : 
+    (score>=70 && score<80) ? grade= 'C' :
+    (score>=60 && score<70) ? grade= 'D' :
+    (score>=50 && score<60) ? grade=  'E' : 
+    (score<50) ? grade=  'F' :
+    printf("INVALIDE INPUT");
+    
 
-    printf("\n your grade is : %c",grade);
+    printf("\n your grade is : %d",score);
 
     switch (grade)
     {
@@ -46,13 +51,14 @@ void main()
         break;
     }
 
-    if(grade>=50)
+    if(grade=='A' || grade=='B' || grade=='C' || grade=='D' || grade=='E')
     {
-        printf("\n Congratulations! you are eligible for the next level .");
+        printf("\n Congratulations! you are eligible for the next level %c",grade);
     }
-    else{
+    else
+    {
         
-        printf("\n Please try again next time.");
+        printf("\n Please try again next time%c"),grade;
     }
         
 }
